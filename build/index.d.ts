@@ -12,6 +12,7 @@ export declare const chars: (...elems: RegExp[]) => Array<typeNFA>
 export declare const and: (...nfas: Array<typeNFA>) => typeNFA
 export declare const or: (...nfas: Array<typeNFA>) => typeNFA
 export declare const kleene: (nfa: typeNFA) => typeNFA
+export declare const star: (nfa: typeNFA) => typeNFA
 export declare const rule: (token: string, exp: typeNFA) => typeRule
 export declare const Driver: (...rules: typeRule[]) => {
     reset: () => void,

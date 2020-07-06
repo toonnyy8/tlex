@@ -49,3 +49,8 @@ export const kleene = (nfa: typeNFA): typeNFA => {
         { action: "", offsets: [] }
     ]
 }
+
+/**
+ * 同 kleene
+ */
+export const star: (nfa: typeNFA) => typeNFA = kleene
