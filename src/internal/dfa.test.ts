@@ -1,6 +1,6 @@
-import { char, chars, and, or, kleene } from "./nfa"
+import { char, chars, and, or, kleene } from "../nfa"
 import { toDFA } from "./dfa"
-import { test } from "./test"
+import { test } from "../test"
 
 test(
     toDFA(

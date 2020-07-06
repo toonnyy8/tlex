@@ -1,5 +1,6 @@
-import { typeNFA, typeRule, typeToken, typeTokenValue } from "./type"
-import { toDFA } from "./dfa"
+import { typeTokenValue } from "./internal/type"
+import { typeNFA, typeRule, typeToken } from "./type"
+import { toDFA } from "./internal/dfa"
 
 export const rule = (token: string, exp: typeNFA): typeRule => ({
     token: token,
@@ -34,7 +35,7 @@ export const Driver = (...rules: typeRule[]): {
     let source: string
     let line: number = 0
     let col: number = 0
-    let token: typeToken = null
+    let token: typeToken = { token: "", symbol: "", line, col }
     // generated = -1 : semifinished
     // generated = 0  : not generated
     // generated = 1  : finished
@@ -62,12 +63,12 @@ export const Driver = (...rules: typeRule[]): {
                         .map((rule, idx) => {
                             if (states[idx] !== -1) {
                                 tokensValue[idx] = {
-                                    value: tokensValue[idx].value,
+                                    symbol: tokensValue[idx].symbol,
                                     temp: tokensValue[idx].temp + source[0]
                                 }
                                 if (rule.dfa[states[idx]].exit) {
                                     tokensValue[idx] = {
-                                        value: tokensValue[idx].value + tokensValue[idx].temp,
+                                        symbol: tokensValue[idx].symbol + tokensValue[idx].temp,
                                         temp: ""
                                     }
                                 }

@@ -1,8 +1,10 @@
-import { typeNFA, typeDFA, typeInterClosureLink, typeInterClosure, typeClosure } from "./type"
+import { arrAdd, arrEq, arrMerge } from "./arr"
+import { typeInterClosureLink, typeInterClosure, typeClosure } from "./type"
+import { typeNFA, typeDFA } from "../type"
 
-export const InterClosure = (nfa: typeNFA, state = 0): typeInterClosure => {
+const InterClosure = (nfa: typeNFA, state = 0): typeInterClosure => {
     const _InterClosure = (nfa: typeNFA, state = 0): typeInterClosure => {
-        if (nfa[state].action === null) {
+        if (nfa[state].action === "") {
             return nfa[state]
                 .offsets
                 .map(offset => _InterClosure(nfa, state + offset))
@@ -29,17 +31,7 @@ export const InterClosure = (nfa: typeNFA, state = 0): typeInterClosure => {
 
     return icl
 }
-let arrEq = <T>(as: Array<T>, bs: Array<T>, eq: (a: T, b: T) => boolean) => {
-    if (as.length !== bs.length) return false
-    return as.find((a, idx) => !eq(a, bs[idx])) === undefined
-}
-let arrAdd = <T>(as: Array<T>, b: T, eq: (a: T, b: T) => boolean) => {
-    if (as.find((a) => eq(a, b)) === undefined) return [...as, b]
-    else return [...as]
-}
-let arrMerge = <T>(as: Array<T>, bs: Array<T>, eq: (a: T, b: T) => boolean) => {
-    return bs.reduce((prevs, b) => arrAdd(prevs, b, eq), as)
-}
+
 const mergeILinks = (ilinks: Array<typeInterClosureLink>) => {
     return [...ilinks]
         .sort((a, b) => a.action > b.action ? 1 : a.action === b.action ? 0 : -1)
@@ -70,7 +62,7 @@ const mergeIclosures = (iclosures: typeInterClosure[]): typeInterClosure => {
             }
         }, <typeInterClosure>{ elems: [], links: [] })
 }
-export const unfold = (nfa: typeNFA): typeClosure[] => {
+const unfold = (nfa: typeNFA): typeClosure[] => {
     let solved: typeClosure[] = []
     let unsolved: typeInterClosure[] = [InterClosure(nfa)]
 
