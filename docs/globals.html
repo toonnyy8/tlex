@@ -70,23 +70,36 @@
 						<section class="tsd-index-section tsd-is-external">
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-is-external"><a href="globals.html#typeclosure" class="tsd-kind-icon">type<wbr>Closure</a></li>
+								<li class="tsd-kind-type-alias tsd-is-external"><a href="globals.html#typeclosurelink" class="tsd-kind-icon">type<wbr>Closure<wbr>Link</a></li>
 								<li class="tsd-kind-type-alias tsd-is-external"><a href="globals.html#typedfa" class="tsd-kind-icon">typeDFA</a></li>
 								<li class="tsd-kind-type-alias tsd-is-external"><a href="globals.html#typedfalink" class="tsd-kind-icon">typeDFALink</a></li>
+								<li class="tsd-kind-type-alias tsd-is-external"><a href="globals.html#typeinterclosure" class="tsd-kind-icon">type<wbr>Inter<wbr>Closure</a></li>
+								<li class="tsd-kind-type-alias tsd-is-external"><a href="globals.html#typeinterclosurelink" class="tsd-kind-icon">type<wbr>Inter<wbr>Closure<wbr>Link</a></li>
 								<li class="tsd-kind-type-alias tsd-is-external"><a href="globals.html#typenfa" class="tsd-kind-icon">typeNFA</a></li>
 								<li class="tsd-kind-type-alias tsd-is-external"><a href="globals.html#typerule" class="tsd-kind-icon">type<wbr>Rule</a></li>
 								<li class="tsd-kind-type-alias tsd-is-external"><a href="globals.html#typetoken" class="tsd-kind-icon">type<wbr>Token</a></li>
+								<li class="tsd-kind-type-alias tsd-is-external"><a href="globals.html#typetokenvalue" class="tsd-kind-icon">type<wbr>Token<wbr>Value</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-external">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-is-external"><a href="globals.html#driver" class="tsd-kind-icon">Driver</a></li>
+								<li class="tsd-kind-function tsd-is-external"><a href="globals.html#interclosure" class="tsd-kind-icon">Inter<wbr>Closure</a></li>
 								<li class="tsd-kind-function tsd-is-external"><a href="globals.html#and" class="tsd-kind-icon">and</a></li>
+								<li class="tsd-kind-function tsd-has-type-parameter tsd-is-external"><a href="globals.html#arradd" class="tsd-kind-icon">arr<wbr>Add</a></li>
+								<li class="tsd-kind-function tsd-has-type-parameter tsd-is-external"><a href="globals.html#arreq" class="tsd-kind-icon">arr<wbr>Eq</a></li>
+								<li class="tsd-kind-function tsd-has-type-parameter tsd-is-external"><a href="globals.html#arrmerge" class="tsd-kind-icon">arr<wbr>Merge</a></li>
 								<li class="tsd-kind-function tsd-is-external"><a href="globals.html#char" class="tsd-kind-icon">char</a></li>
 								<li class="tsd-kind-function tsd-is-external"><a href="globals.html#chars" class="tsd-kind-icon">chars</a></li>
 								<li class="tsd-kind-function tsd-is-external"><a href="globals.html#kleene" class="tsd-kind-icon">kleene</a></li>
+								<li class="tsd-kind-function tsd-is-external"><a href="globals.html#mergeilinks" class="tsd-kind-icon">mergeILinks</a></li>
+								<li class="tsd-kind-function tsd-is-external"><a href="globals.html#mergeiclosures" class="tsd-kind-icon">merge<wbr>Iclosures</a></li>
 								<li class="tsd-kind-function tsd-is-external"><a href="globals.html#or" class="tsd-kind-icon">or</a></li>
 								<li class="tsd-kind-function tsd-is-external"><a href="globals.html#rule" class="tsd-kind-icon">rule</a></li>
+								<li class="tsd-kind-function tsd-is-external"><a href="globals.html#todfa" class="tsd-kind-icon">toDFA</a></li>
+								<li class="tsd-kind-function tsd-is-external"><a href="globals.html#unfold" class="tsd-kind-icon">unfold</a></li>
 							</ul>
 						</section>
 					</div>
@@ -95,12 +108,54 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Type aliases</h2>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-is-external">
+					<a name="typeclosure" class="tsd-anchor"></a>
+					<h3>type<wbr>Closure</h3>
+					<div class="tsd-signature tsd-kind-icon">type<wbr>Closure<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>elems<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>links<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="globals.html#typeclosurelink" class="tsd-signature-type">typeClosureLink</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/670334b/src/internal/type.ts#L5">internal/type.ts:5</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>elems<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>links<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="globals.html#typeclosurelink" class="tsd-signature-type">typeClosureLink</a><span class="tsd-signature-symbol">&gt;</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-is-external">
+					<a name="typeclosurelink" class="tsd-anchor"></a>
+					<h3>type<wbr>Closure<wbr>Link</h3>
+					<div class="tsd-signature tsd-kind-icon">type<wbr>Closure<wbr>Link<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>action<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>toClosure<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/670334b/src/internal/type.ts#L4">internal/type.ts:4</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>action<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>to<wbr>Closure<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-is-external">
 					<a name="typedfa" class="tsd-anchor"></a>
 					<h3>typeDFA</h3>
 					<div class="tsd-signature tsd-kind-icon">typeDFA<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span>exit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>links<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="globals.html#typedfalink" class="tsd-signature-type">typeDFALink</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/20aa6c1/src/type.ts#L4">type.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/670334b/src/type.ts#L4">type.ts:4</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -110,7 +165,7 @@
 					<div class="tsd-signature tsd-kind-icon">typeDFALink<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>action<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>next<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/20aa6c1/src/type.ts#L3">type.ts:3</a></li>
+							<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/670334b/src/type.ts#L3">type.ts:3</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -126,12 +181,54 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-is-external">
+					<a name="typeinterclosure" class="tsd-anchor"></a>
+					<h3>type<wbr>Inter<wbr>Closure</h3>
+					<div class="tsd-signature tsd-kind-icon">type<wbr>Inter<wbr>Closure<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>elems<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>links<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="globals.html#typeinterclosurelink" class="tsd-signature-type">typeInterClosureLink</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/670334b/src/internal/type.ts#L2">internal/type.ts:2</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>elems<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>links<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="globals.html#typeinterclosurelink" class="tsd-signature-type">typeInterClosureLink</a><span class="tsd-signature-symbol">&gt;</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-is-external">
+					<a name="typeinterclosurelink" class="tsd-anchor"></a>
+					<h3>type<wbr>Inter<wbr>Closure<wbr>Link</h3>
+					<div class="tsd-signature tsd-kind-icon">type<wbr>Inter<wbr>Closure<wbr>Link<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>action<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>toElems<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/670334b/src/internal/type.ts#L1">internal/type.ts:1</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>action<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>to<wbr>Elems<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-is-external">
 					<a name="typenfa" class="tsd-anchor"></a>
 					<h3>typeNFA</h3>
 					<div class="tsd-signature tsd-kind-icon">typeNFA<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span>action<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>offsets<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/20aa6c1/src/type.ts#L1">type.ts:1</a></li>
+							<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/670334b/src/type.ts#L1">type.ts:1</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -141,7 +238,7 @@
 					<div class="tsd-signature tsd-kind-icon">type<wbr>Rule<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>dfa<span class="tsd-signature-symbol">: </span><a href="globals.html#typedfa" class="tsd-signature-type">typeDFA</a><span class="tsd-signature-symbol">; </span>token<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/20aa6c1/src/type.ts#L6">type.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/670334b/src/type.ts#L6">type.ts:6</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -162,7 +259,7 @@
 					<div class="tsd-signature tsd-kind-icon">type<wbr>Token<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>col<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>line<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>symbol<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>token<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/20aa6c1/src/type.ts#L8">type.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/670334b/src/type.ts#L8">type.ts:8</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -183,6 +280,27 @@
 						</ul>
 					</div>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-is-external">
+					<a name="typetokenvalue" class="tsd-anchor"></a>
+					<h3>type<wbr>Token<wbr>Value</h3>
+					<div class="tsd-signature tsd-kind-icon">type<wbr>Token<wbr>Value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>symbol<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>temp<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/670334b/src/internal/type.ts#L7">internal/type.ts:7</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>symbol<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>temp<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Functions</h2>
@@ -196,7 +314,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/20aa6c1/src/driver.ts#L10">driver.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/670334b/src/driver.ts#L10">driver.ts:10</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -293,6 +411,32 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-is-external">
+					<a name="interclosure" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Inter<wbr>Closure</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">Inter<wbr>Closure<span class="tsd-signature-symbol">(</span>nfa<span class="tsd-signature-symbol">: </span><a href="globals.html#typenfa" class="tsd-signature-type">typeNFA</a>, state<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="globals.html#typeinterclosure" class="tsd-signature-type">typeInterClosure</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/670334b/src/internal/dfa.ts#L5">internal/dfa.ts:5</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>nfa: <a href="globals.html#typenfa" class="tsd-signature-type">typeNFA</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> state: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="globals.html#typeinterclosure" class="tsd-signature-type">typeInterClosure</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-is-external">
 					<a name="and" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> and</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-is-external">
@@ -302,7 +446,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/20aa6c1/src/nfa.ts#L9">nfa.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/670334b/src/nfa.ts#L9">nfa.ts:9</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -312,6 +456,174 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="globals.html#typenfa" class="tsd-signature-type">typeNFA</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter tsd-is-external">
+					<a name="arradd" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagLet">Let</span> arr<wbr>Add</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">arr<wbr>Add&lt;T&gt;<span class="tsd-signature-symbol">(</span>as<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, eq<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/670334b/src/internal/arr.ts#L5">internal/arr.ts:5</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>as: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5>b: <span class="tsd-signature-type">T</span></h5>
+								</li>
+								<li>
+									<h5>eq: <span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">boolean</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>a: <span class="tsd-signature-type">T</span></h5>
+														</li>
+														<li>
+															<h5>b: <span class="tsd-signature-type">T</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter tsd-is-external">
+					<a name="arreq" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagLet">Let</span> arr<wbr>Eq</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">arr<wbr>Eq&lt;T&gt;<span class="tsd-signature-symbol">(</span>as<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, bs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, eq<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/670334b/src/internal/arr.ts#L1">internal/arr.ts:1</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>as: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5>bs: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5>eq: <span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">boolean</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>a: <span class="tsd-signature-type">T</span></h5>
+														</li>
+														<li>
+															<h5>b: <span class="tsd-signature-type">T</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter tsd-is-external">
+					<a name="arrmerge" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagLet">Let</span> arr<wbr>Merge</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">arr<wbr>Merge&lt;T&gt;<span class="tsd-signature-symbol">(</span>as<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, bs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, eq<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/670334b/src/internal/arr.ts#L9">internal/arr.ts:9</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>as: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5>bs: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5>eq: <span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">boolean</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>a: <span class="tsd-signature-type">T</span></h5>
+														</li>
+														<li>
+															<h5>b: <span class="tsd-signature-type">T</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -325,7 +637,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/20aa6c1/src/nfa.ts#L3">nfa.ts:3</a></li>
+									<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/670334b/src/nfa.ts#L3">nfa.ts:3</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -348,7 +660,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/20aa6c1/src/nfa.ts#L4">nfa.ts:4</a></li>
+									<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/670334b/src/nfa.ts#L4">nfa.ts:4</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -371,7 +683,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/20aa6c1/src/nfa.ts#L29">nfa.ts:29</a></li>
+									<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/670334b/src/nfa.ts#L29">nfa.ts:29</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -385,6 +697,52 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-is-external">
+					<a name="mergeilinks" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> mergeILinks</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">mergeILinks<span class="tsd-signature-symbol">(</span>ilinks<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="globals.html#typeinterclosurelink" class="tsd-signature-type">typeInterClosureLink</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>action<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>toElems<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/670334b/src/internal/dfa.ts#L35">internal/dfa.ts:35</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>ilinks: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="globals.html#typeinterclosurelink" class="tsd-signature-type">typeInterClosureLink</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>action<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>toElems<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-is-external">
+					<a name="mergeiclosures" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> merge<wbr>Iclosures</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">merge<wbr>Iclosures<span class="tsd-signature-symbol">(</span>iclosures<span class="tsd-signature-symbol">: </span><a href="globals.html#typeinterclosure" class="tsd-signature-type">typeInterClosure</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="globals.html#typeinterclosure" class="tsd-signature-type">typeInterClosure</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/670334b/src/internal/dfa.ts#L50">internal/dfa.ts:50</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>iclosures: <a href="globals.html#typeinterclosure" class="tsd-signature-type">typeInterClosure</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="globals.html#typeinterclosure" class="tsd-signature-type">typeInterClosure</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-is-external">
 					<a name="or" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> or</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-is-external">
@@ -394,7 +752,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/20aa6c1/src/nfa.ts#L17">nfa.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/670334b/src/nfa.ts#L17">nfa.ts:17</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -417,7 +775,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/20aa6c1/src/driver.ts#L5">driver.ts:5</a></li>
+									<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/670334b/src/driver.ts#L5">driver.ts:5</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -430,6 +788,52 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="globals.html#typerule" class="tsd-signature-type">typeRule</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-is-external">
+					<a name="todfa" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> toDFA</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">toDFA<span class="tsd-signature-symbol">(</span>nfa<span class="tsd-signature-symbol">: </span><a href="globals.html#typenfa" class="tsd-signature-type">typeNFA</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="globals.html#typedfa" class="tsd-signature-type">typeDFA</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/670334b/src/internal/dfa.ts#L92">internal/dfa.ts:92</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>nfa: <a href="globals.html#typenfa" class="tsd-signature-type">typeNFA</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="globals.html#typedfa" class="tsd-signature-type">typeDFA</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-is-external">
+					<a name="unfold" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> unfold</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">unfold<span class="tsd-signature-symbol">(</span>nfa<span class="tsd-signature-symbol">: </span><a href="globals.html#typenfa" class="tsd-signature-type">typeNFA</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="globals.html#typeclosure" class="tsd-signature-type">typeClosure</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/toonnyy8/tlex/blob/670334b/src/internal/dfa.ts#L65">internal/dfa.ts:65</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>nfa: <a href="globals.html#typenfa" class="tsd-signature-type">typeNFA</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="globals.html#typeclosure" class="tsd-signature-type">typeClosure</a><span class="tsd-signature-symbol">[]</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -446,10 +850,22 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#typeclosure" class="tsd-kind-icon">type<wbr>Closure</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#typeclosurelink" class="tsd-kind-icon">type<wbr>Closure<wbr>Link</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
 						<a href="globals.html#typedfa" class="tsd-kind-icon">typeDFA</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-is-external">
 						<a href="globals.html#typedfalink" class="tsd-kind-icon">typeDFALink</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#typeinterclosure" class="tsd-kind-icon">type<wbr>Inter<wbr>Closure</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#typeinterclosurelink" class="tsd-kind-icon">type<wbr>Inter<wbr>Closure<wbr>Link</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-is-external">
 						<a href="globals.html#typenfa" class="tsd-kind-icon">typeNFA</a>
@@ -460,11 +876,26 @@
 					<li class=" tsd-kind-type-alias tsd-is-external">
 						<a href="globals.html#typetoken" class="tsd-kind-icon">type<wbr>Token</a>
 					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#typetokenvalue" class="tsd-kind-icon">type<wbr>Token<wbr>Value</a>
+					</li>
 					<li class=" tsd-kind-function tsd-is-external">
 						<a href="globals.html#driver" class="tsd-kind-icon">Driver</a>
 					</li>
 					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#interclosure" class="tsd-kind-icon">Inter<wbr>Closure</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
 						<a href="globals.html#and" class="tsd-kind-icon">and</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#arradd" class="tsd-kind-icon">arr<wbr>Add</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#arreq" class="tsd-kind-icon">arr<wbr>Eq</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#arrmerge" class="tsd-kind-icon">arr<wbr>Merge</a>
 					</li>
 					<li class=" tsd-kind-function tsd-is-external">
 						<a href="globals.html#char" class="tsd-kind-icon">char</a>
@@ -476,10 +907,22 @@
 						<a href="globals.html#kleene" class="tsd-kind-icon">kleene</a>
 					</li>
 					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#mergeilinks" class="tsd-kind-icon">mergeILinks</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#mergeiclosures" class="tsd-kind-icon">merge<wbr>Iclosures</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
 						<a href="globals.html#or" class="tsd-kind-icon">or</a>
 					</li>
 					<li class=" tsd-kind-function tsd-is-external">
 						<a href="globals.html#rule" class="tsd-kind-icon">rule</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#todfa" class="tsd-kind-icon">toDFA</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#unfold" class="tsd-kind-icon">unfold</a>
 					</li>
 				</ul>
 			</nav>
