@@ -1,0 +1,28 @@
+{
+  "name": "tlex",
+  "version": "1.0.0",
+  "description": "lexical analyzer",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel ./dev/index.html -p 8080",
+    "build": "parcel build --no-content-hash ./src/index.ts --out-dir build --public-url=./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toonnyy8/tlex.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/toonnyy8/tlex/issues"
+  },
+  "homepage": "https://github.com/toonnyy8/tlex#readme",
+  "dependencies": {
+    "parcel": "^1.12.4"
+  },
+  "devDependencies": {
+    "typescript": "^3.9.6"
+  }
+}
