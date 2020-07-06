@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel ./dev/index.html -p 8080",
     "build": "parcel build --no-content-hash ./src/index.ts --out-dir build --public-url=./",
-    "doc": "typedoc --out docs src/index.ts  --exclude 'src/internal/*.ts' --mode file"
+    "doc": "typedoc --out docs src/index.ts  --exclude \"src/internal/*.ts\" --mode file"
   },
   "repository": {
     "type": "git",
