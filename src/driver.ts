@@ -2,11 +2,17 @@ import { typeTokenValue } from "./internal/type"
 import { typeNFA, typeRule, typeToken } from "./type"
 import { toDFA } from "./internal/dfa"
 
+/**
+ * 輸入 Token Name 與 NFA 後回傳 Token Rule
+ */
 export const rule = (token: string, exp: typeNFA): typeRule => ({
     token: token,
     dfa: toDFA(exp),
 })
 
+/**
+ * 輸入多條 Token Rule 後回傳 Lexical Analyzer
+ */
 export const Driver = (...rules: typeRule[]): {
     reset: () => void,
     addCode: (code: string) => string,
