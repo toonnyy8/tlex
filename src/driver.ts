@@ -1,6 +1,7 @@
 import { typeTokenValue } from "./internal/type"
 import { typeNFA, typeRule, typeToken } from "./type"
 import { toDFA } from "./internal/dfa"
+import { createRegRule, updateState } from "./internal/driver"
 
 /**
  * 輸入 Token Name 與 NFA 後回傳 Token Rule
@@ -16,28 +17,17 @@ export const rule = (token: string, exp: typeNFA): typeRule => ({
 export const Driver = (...rules: typeRule[]): {
     reset: () => void,
     addCode: (code: string) => string,
-    genToken: () => 0 | 1 | -1,
+    generate: () => 0 | 1 | -1,
     getToken: () => typeToken,
-    dropToken: () => 0 | -1,
+    /**
+     * 丟棄
+     */
+    drop: () => 0 | -1,
 } => {
     let states: Array<number> = new Array(rules.length).fill(0)
     let tokensValue: Array<typeTokenValue> = new Array(rules.length).fill({ value: "", temp: "" })
 
-    let _rules = rules
-        .map(rule => ({
-            ...rules,
-            dfa: rule
-                .dfa
-                .map(_dfa => ({
-                    ..._dfa,
-                    links: _dfa
-                        .links
-                        .map(link => ({
-                            ...link,
-                            action: new RegExp(link.action)
-                        }))
-                }))
-        }))
+    let regRules = rules.map(r => createRegRule(r))
     let source: string
     let line: number = 0
     let col: number = 0
@@ -47,17 +37,17 @@ export const Driver = (...rules: typeRule[]): {
     // generated = 1  : finished
     let generated: -1 | 0 | 1
 
-    let reset = () => {
+    const reset = () => {
         source = ""
         line = 0
         col = 0
     }
-    let addCode = (code: string) => {
+    const addCode = (code: string) => {
         source += code
         return source
     }
 
-    let genToken = () => {
+    const generate = () => {
         if (source[0] === "\n") {
             line += 1
             col = 0
@@ -65,7 +55,18 @@ export const Driver = (...rules: typeRule[]): {
         switch (generated) {
             case -1: {
                 if (source.length !== 0) {
-                    states = _rules
+                    // states = regRules
+                    //     .map((regRule, idx) => updateState(regRule, states[idx], source[0]))
+                    // tokensValue = states
+                    //     .map((state, idx) => {
+                    //         return {
+                    //             symbol: tokensValue[idx].symbol,
+                    //             temp: state !== -1 ?
+                    //                 tokensValue[idx].temp + source[0] :
+                    //                 tokensValue[idx].temp
+                    //         }
+                    //     })
+                    states = regRules
                         .map((rule, idx) => {
                             if (states[idx] !== -1) {
                                 tokensValue[idx] = {
@@ -104,8 +105,8 @@ export const Driver = (...rules: typeRule[]): {
         }
         return generated
     }
-    let getToken = () => ({ ...token })
-    let dropToken = () => {
+    const getToken = () => ({ ...token })
+    const drop = () => {
         switch (generated) {
             case 0: {
                 generated = 0
@@ -119,5 +120,5 @@ export const Driver = (...rules: typeRule[]): {
         return generated
     }
 
-    return { reset, addCode, genToken, getToken, dropToken }
+    return Object.freeze({ reset, addCode, generate, getToken, drop })
 }

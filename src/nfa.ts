@@ -53,4 +53,4 @@ export const kleene = (nfa: typeNFA): typeNFA => {
 /**
  * 同 kleene
  */
-export const star: (nfa: typeNFA) => typeNFA = kleene
+export const star = (nfa: typeNFA): typeNFA => kleene(nfa)
