@@ -1,4 +1,4 @@
-import { typeRegDFALink, typeRegDFA, typeRegRule } from "./type"
+import { typeRegDFALink, typeRegDFA, typeRegRule, typeTokenValue } from "./type"
 import { typeDFALink, typeDFA, typeRule } from "../type"
 
 const createRegDFALinks = (links: Array<typeDFALink>): Array<typeRegDFALink> => {
@@ -30,4 +30,19 @@ export const updateState = (regRule: typeRegRule, nowState: number, action: stri
             .action
             .test(action))?.next
     return nextState !== undefined ? nextState : -1
+}
+
+export const addAction2Temp = (tokenValue: typeTokenValue, action: string): typeTokenValue => {
+    return {
+        symbol: tokenValue.symbol,
+        temp: tokenValue.temp + action
+    }
+}
+
+export const addTemp2Symbol = (tokenValue: typeTokenValue): typeTokenValue => {
+    return {
+        symbol: tokenValue.symbol +
+            tokenValue.temp,
+        temp: ""
+    }
 }
