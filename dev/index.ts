@@ -30,12 +30,20 @@ let driver = tlex.Driver(
             tlex.kleene(tlex.char(/./)),
         ),
     ),
+    tlex.rule(
+        "[EOL]",
+        tlex.char(/\n/),
+    ),
 )
 
 driver.addCode("let")
-driver.addCode(driver.end)
-driver.addCode("let")
-driver.addCode(driver.end)
+driver.addCode(" x")
+driver.addCode("// asdasd\n")
+driver.closeBuffer()
+
+console.log(
+    `generate :`, driver.generate()
+)
 console.log(
     `generate :`, driver.generate()
 )

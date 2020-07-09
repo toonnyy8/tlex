@@ -5,4 +5,4 @@ export type typeDFA = Array<{ exit: boolean, links: Array<typeDFALink> }>
 
 export type typeRule = { token: string, dfa: typeDFA }
 
-export type typeToken = { token: string, symbol: string, line: number, col: number }
+export type typeToken = { token: string, symbol: string }
