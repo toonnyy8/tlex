@@ -15,8 +15,8 @@ export const rule = (token: string, exp: typeNFA): typeRule => ({
  * 輸入多條 Token Rule 後回傳 Lexical Analyzer
  */
 export const Driver = (...rules: typeRule[]): {
-    reset: () => void,
-    addCode: (code: string) => string,
+    end: () => { END: boolean },
+    addCode: (code: string | (() => { END: boolean })) => string,
     generate: () => 0 | 1 | -1,
     getToken: () => typeToken,
     /**
@@ -24,79 +24,108 @@ export const Driver = (...rules: typeRule[]): {
      */
     drop: () => 0 | -1,
 } => {
-    let states: Array<number> = new Array(rules.length).fill(0)
-    let tokensValue: Array<typeTokenValue> = new Array(rules.length).fill({ value: "", temp: "" })
-
     let regRules = rules.map(r => createRegRule(r))
-    let source: string
+
+    let states: Array<number> = new Array(rules.length).fill(0)
+    let tokensValue: Array<typeTokenValue> = new Array(rules.length).fill({ symbol: "", temp: "" })
+
+    let sources: Array<string> = [""]
     let line: number = 0
     let col: number = 0
     let token: typeToken = { token: "", symbol: "", line, col }
     // generated = -1 : semifinished
     // generated = 0  : not generated
     // generated = 1  : finished
-    let generated: -1 | 0 | 1
+    let generated: -1 | 0 | 1 = 0
 
-    const reset = () => {
-        source = ""
-        line = 0
-        col = 0
-    }
-    const addCode = (code: string) => {
-        source += code
-        return source
+    const end = () => ({ "END": true })
+    const addCode = (code: string | (() => { END: boolean })) => {
+        if (typeof code === "string") {
+            sources = [...sources.slice(0, -1), sources[sources.length - 1] + code]
+        } else {
+            sources = end().END ? [...sources, ""] : sources
+        }
+        return sources[sources.length]
     }
 
     const generate = () => {
-        if (source[0] === "\n") {
-            line += 1
-            col = 0
-        }
+        let _line = 0, _col = col
         switch (generated) {
             case -1: {
-                if (source.length !== 0) {
-                    // states = regRules
-                    //     .map((regRule, idx) => updateState(regRule, states[idx], source[0]))
-                    // tokensValue = states
-                    //     .map((state, idx) => {
-                    //         return {
-                    //             symbol: tokensValue[idx].symbol,
-                    //             temp: state !== -1 ?
-                    //                 tokensValue[idx].temp + source[0] :
-                    //                 tokensValue[idx].temp
-                    //         }
-                    //     })
-                    states = regRules
-                        .map((rule, idx) => {
-                            if (states[idx] !== -1) {
-                                tokensValue[idx] = {
-                                    symbol: tokensValue[idx].symbol,
-                                    temp: tokensValue[idx].temp + source[0]
-                                }
-                                if (rule.dfa[states[idx]].exit) {
-                                    tokensValue[idx] = {
-                                        symbol: tokensValue[idx].symbol + tokensValue[idx].temp,
-                                        temp: ""
-                                    }
-                                }
-                                let link = rule.dfa[states[idx]]
-                                    .links
-                                    .find(link => link
-                                        .action
-                                        .test(source[0]))
-                                if (link !== undefined) {
-
-                                    return link.next
-                                } else return -1
-                            } else return -1
-                        })
+                if (sources.length < 1) {
+                    throw new Error("A")
+                } else if (sources[0].length === 0) {
+                    throw new Error("B")
                 }
-                break
             }
             case 0: {
-                if (source.length !== 0) {
-
+                while (sources[0].length !== 0) {
+                    states = regRules
+                        .map((regRule, idx) => updateState(regRule, states[idx], sources[0][0]))
+                    tokensValue = states
+                        .map((state, idx) => {
+                            return {
+                                state: state,
+                                tokenValue: {
+                                    symbol: tokensValue[idx].symbol,
+                                    temp: state !== -1 ?
+                                        tokensValue[idx].temp + sources[0][0] :
+                                        tokensValue[idx].temp
+                                }
+                            }
+                        })
+                        .map(({ state, tokenValue }, idx) => {
+                            if (regRules[idx].dfa[state]?.exit) {
+                                return {
+                                    symbol: tokenValue.symbol +
+                                        tokenValue.temp,
+                                    temp: ""
+                                }
+                            } else {
+                                return { ...tokenValue }
+                            }
+                        })
+                    if (states.filter(state => state !== -1).length !== 0) {
+                        if (sources[0][0] === "\n") {
+                            _line += 1
+                            _col = 0
+                        } else {
+                            _col += 1
+                        }
+                        sources = [sources[0].slice(1), ...sources.slice(1)]
+                    } else break
                 }
+                let ruleNum = tokensValue
+                    .reduce((prev, curr, idx) => {
+                        if (tokensValue[prev].symbol < curr.symbol) {
+                            return idx
+                        } else return prev
+                    }, 0)
+                sources = [tokensValue[ruleNum].temp + sources[0], ...sources.slice(1)]
+                console.log(sources)
+                if (sources.length === 0) {
+                    if (sources[0].length === 0 &&
+                        tokensValue[ruleNum].temp.length !== 0) {
+                        console.warn("need add code")
+                        generated = -1
+                    }
+                } else {
+                    if (sources[0].length === 0 &&
+                        tokensValue[ruleNum].temp.length !== 0) {
+                        console.error("source code error")
+                        generated = -1
+                    }
+                }
+                token = {
+                    token: regRules[ruleNum].token,
+                    symbol: tokensValue[ruleNum].symbol,
+                    line,
+                    col
+                }
+
+                line += _line
+                col = _col
+                generated = 1
                 break
             }
             case 1: {
@@ -113,6 +142,9 @@ export const Driver = (...rules: typeRule[]): {
                 break
             }
             case 1: {
+                token = { token: "", symbol: "", line, col }
+                states = new Array(rules.length).fill(0)
+                tokensValue = new Array(rules.length).fill({ symbol: "", temp: "" })
                 generated = 0
                 break
             }
@@ -120,5 +152,5 @@ export const Driver = (...rules: typeRule[]): {
         return generated
     }
 
-    return Object.freeze({ reset, addCode, generate, getToken, drop })
+    return Object.freeze({ end, addCode, generate, getToken, drop })
 }

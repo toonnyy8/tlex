@@ -1,6 +1,6 @@
 import "../src/nfa.test"
 import "../src/internal/dfa.test"
-import "../src/driver.test"
+// import "../src/driver.test"
 
 import * as tlex from "../src"
 
@@ -30,4 +30,51 @@ let driver = tlex.Driver(
             tlex.kleene(tlex.char(/./)),
         ),
     ),
+)
+
+driver.addCode("let")
+driver.addCode(driver.end)
+driver.addCode("let")
+driver.addCode(driver.end)
+console.log(
+    `generate :`, driver.generate()
+)
+console.log(
+    driver.getToken()
+)
+console.log(
+    `drop :`, driver.drop()
+)
+console.log(
+    `generate :`, driver.generate()
+)
+console.log(
+    driver.getToken()
+)
+console.log(
+    `drop :`, driver.drop()
+)
+console.log(
+    `generate :`, driver.generate()
+)
+console.log(
+    driver.getToken()
+)
+console.log(
+    `drop :`, driver.drop()
+)
+console.log(
+    `generate :`, driver.generate()
+)
+console.log(
+    driver.getToken()
+)
+console.log(
+    `drop :`, driver.drop()
+)
+console.log(
+    `generate :`, driver.generate()
+)
+console.log(
+    driver.getToken()
 )

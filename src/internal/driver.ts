@@ -24,9 +24,9 @@ export const createRegRule = (rule: typeRule): typeRegRule => {
 
 export const updateState = (regRule: typeRegRule, nowState: number, action: string): number => {
     let nextState = regRule
-        .dfa[nowState]
-        .links
-        .find((link) => link
+        ?.dfa[nowState]
+        ?.links
+        ?.find((link) => link
             .action
             .test(action))?.next
     return nextState !== undefined ? nextState : -1

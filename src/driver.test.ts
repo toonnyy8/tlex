@@ -18,8 +18,3 @@ let driver = Driver(
         ),
     ),
 )
-driver.reset()
-driver.addCode("id _asd l2")
-// while (true) {
-//     driver.genToken()
-// }
