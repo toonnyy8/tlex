@@ -1,7 +1,9 @@
+const eruda = require("eruda")
+eruda.init()
+
 import "../src/nfa.test"
 import "../src/internal/dfa.test"
 // import "../src/driver.test"
-
 import * as tlex from "../src"
 
 let driver = tlex.Driver(
@@ -36,9 +38,8 @@ let driver = tlex.Driver(
     ),
 )
 
-driver.addCode("let")
-driver.addCode(" x")
-driver.addCode("// asdasd\n")
+driver.addCode("let +")
+// driver.addCode("+")
 driver.closeBuffer()
 
 console.log(

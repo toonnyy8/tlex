@@ -49,6 +49,11 @@ export const Driver = (...rules: typeRule[]): {
     }
 
     const generate = () => {
+        if (!OPEN &&
+            source.length === 0) {
+            console.warn("生成完畢")
+            return generated
+        }
         switch (generated) {
             case -1: {
                 // if (sources.length < 1) {
@@ -81,12 +86,6 @@ export const Driver = (...rules: typeRule[]): {
                         source = source.slice(1)
                     } else break
                 }
-                if (source.length === 0 && OPEN) {
-                    console.warn("Please add code or close the buffer")
-
-                    generated = -1
-                    return generated
-                }
                 let data = dataset
                     .slice(1)
                     .reduce((prev, curr) => {
@@ -95,18 +94,23 @@ export const Driver = (...rules: typeRule[]): {
                         } else return prev
                     }, dataset[0])
 
-                if (source.length === 0 &&
-                    data.tokenValue.temp.length !== 0) {
-                    console.warn("need add code")
+                if (OPEN &&
+                    source.length === 0) {
+                    console.warn("Please add code or close the buffer")
+
                     generated = -1
-                    break
+                    return generated
+                } else if
+                    (!OPEN &&
+                    data.tokenValue.symbol === ""
+
+                ) {
+                    console.error("source code error")
+
+                    generated = -1
+                    return generated
                 }
                 source = data.tokenValue.temp + source
-                console.log(source)
-                if (data.tokenValue.symbol.length === 0 &&
-                    source.length !== 0) {
-                    console.error("source code error")
-                }
 
                 token = {
                     token: data.regRule.token,
